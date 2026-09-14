@@ -1,30 +1,24 @@
 import "bootstrap";
 import "./style.css";
 
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
+    // Mantenemos nuestros arreglos originales
+    let pronouns = ['the', 'our'];
+    let adjs = ['great', 'big'];
+    let nouns = ['jogger', 'racoon'];
 
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'racoon'];
-
-for (let i = 0; i < pronoun.length; i++) {
-    
-    for (let j = 0; j < adj.length; j++) {
-        
-        for (let k = 0; k < noun.length; k++) {
-            
-            let dominio = pronoun[i] + adj[j] + noun[k] + ".com";
-            
-            console.log(dominio);
+    // Refactorización: Usamos for...of en lugar del clásico for(let i=0...)
+    for (let p of pronouns) {
+        for (let a of adjs) {
+            for (let n of nouns) {
+                let dominio = p + a + n + ".com";
+                console.log(dominio);
+            }
         }
     }
-}
-
-
-  console.log("Hello Rigo from the console!");
+    
+    console.log("Hello Rigo from the console!");
 };
